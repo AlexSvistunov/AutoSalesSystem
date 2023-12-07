@@ -5,16 +5,22 @@ import java.util.Map;
 
 class CarDealer {
     private List<Car> cars;
-    private Map<Car, Buyer> sales = new HashMap<>();
+    private Map<Car, Buyer> sales;
 
     public CarDealer() {
         this.cars = new ArrayList<>();
+        this.sales = new HashMap<>();
     }
 
-    public void addCar(String type, String model, String brand) {
-        Car car = new Car(type, model, brand);
+    public void addCar(String type, String brand, String model) {
+        Car car = new Car(type, brand, model);
         cars.add(car);
     }
+
+    public void addCar(Car car) {
+        cars.add(car);
+    }
+
 
     public void showAvailableCars() {
         System.out.println("Available Cars:");

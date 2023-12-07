@@ -1,11 +1,12 @@
 class Car {
     private String type;
-    private String model;
+
     private String brand;
+    private String model;
     private boolean isSold;
     private Buyer buyer;
 
-    public Car(String type, String model, String brand) {
+    public Car(String type, String brand, String model) {
         this.type = type;
         this.model = model;
         this.brand = brand;
