@@ -45,7 +45,6 @@ class CarDealership {
                 car.setSold(true);
                 car.setBuyer(buyer);
                 buyers.add(buyer);
-                // Обновление базы данных
                 try (Connection connection = MySqlConnector.getConnection()) {
                     String carQuery = "UPDATE cars SET sold = true, buyer_id = ? WHERE id = ?";
                     try (PreparedStatement carStatement = connection.prepareStatement(carQuery)) {
@@ -69,7 +68,6 @@ class CarDealership {
                 car.setType(type);
                 car.setModel(model);
                 car.setBrand(brand);
-                // Обновление базы данных
                 try (Connection connection = MySqlConnector.getConnection()) {
                     String query = "UPDATE cars SET type = ?, model = ?, brand = ? WHERE id = ?";
                     try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
@@ -93,7 +91,6 @@ class CarDealership {
             if (buyer.getFullName().equals(fullName)) {
                 buyer.setAge(age);
                 buyer.setGender(gender);
-                // Обновление базы данных
                 try (Connection connection = MySqlConnector.getConnection()) {
                     String query = "UPDATE buyers SET age = ?, gender = ? WHERE full_name = ?";
                     try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
