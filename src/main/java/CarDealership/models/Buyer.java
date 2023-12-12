@@ -12,7 +12,6 @@ public class Buyer {
         this.gender = gender;
     }
 
-    // Геттеры и сеттеры для полей
 
     public int getId() {
         return id;
@@ -46,7 +45,6 @@ public class Buyer {
         this.gender = gender;
     }
 
-    // Метод toString
     @Override
     public String toString() {
         return "Buyer{" +
