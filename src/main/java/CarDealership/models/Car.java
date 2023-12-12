@@ -3,7 +3,6 @@ package CarDealership.models;
 import java.util.ArrayList;
 import java.util.List;
 
-// Класс автомобиля
 public class Car {
     private int id;
     private String type;
@@ -20,7 +19,6 @@ public class Car {
         this.buyer = null;
     }
 
-    // Геттеры и сеттеры
 
     public int getId() {
         return id;
@@ -70,7 +68,6 @@ public class Car {
         this.buyer = buyer;
     }
 
-    // Метод toString
     @Override
     public String toString() {
         return "Car{" +
