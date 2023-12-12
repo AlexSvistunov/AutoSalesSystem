@@ -17,7 +17,6 @@ class CarDealership {
 
     public void addCar(Car car) {
         cars.add(car);
-        // Добавление в базу данных
         try (Connection connection = MySqlConnector.getConnection()) {
             String carQuery = "INSERT INTO cars (type, model, brand, sold, buyer_id) VALUES (?, ?, ?, ?, ?)";
             try (PreparedStatement carStatement = connection.prepareStatement(carQuery, Statement.RETURN_GENERATED_KEYS)) {
@@ -25,10 +24,10 @@ class CarDealership {
                 carStatement.setString(2, car.getModel());
                 carStatement.setString(3, car.getBrand());
                 carStatement.setBoolean(4, car.isSold());
-                carStatement.setObject(5, null); // buyer_id, пока машина не продана
+                carStatement.setObject(5, null); 
                 carStatement.executeUpdate();
 
-                // Получение сгенерированного ключа (id) для машины
+
                 ResultSet generatedKeys = carStatement.getGeneratedKeys();
                 if (generatedKeys.next()) {
                     int carId = generatedKeys.getInt(1);
